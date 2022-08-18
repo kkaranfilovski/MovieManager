@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManager.Domain", "MovieManager.Domain\MovieManager.Domain.csproj", "{0678A81E-E503-4282-8157-4B6767AF8F21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManager.DataAccess", "MovieManager.DataAccess\MovieManager.DataAccess.csproj", "{84F20C49-5E42-42A2-8C69-F9677E1DE9C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManager.Services", "MovieManager.Services\MovieManager.Services.csproj", "{44D95566-7FFA-4B33-99D7-06DCDD1ADF26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManager.ServiceModels", "MovieManager.ServiceModels\MovieManager.ServiceModels.csproj", "{47FD3C9B-3C71-45DF-9B87-9EC18BEA698A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManager.Helpers", "MovieManager.Helpers\MovieManager.Helpers.csproj", "{94114787-8173-4297-8571-28C4E9D92CF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManager.DependecyInjection", "MovieManager.DependecyInjection\MovieManager.DependecyInjection.csproj", "{76E69093-9906-4FCA-9F9F-A3E24DA01CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManager.Api", "MovieManager.Api\MovieManager.Api.csproj", "{94FA90A4-CCE4-49DC-8CCF-C6B9C86F8772}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0678A81E-E503-4282-8157-4B6767AF8F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0678A81E-E503-4282-8157-4B6767AF8F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0678A81E-E503-4282-8157-4B6767AF8F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0678A81E-E503-4282-8157-4B6767AF8F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84F20C49-5E42-42A2-8C69-F9677E1DE9C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84F20C49-5E42-42A2-8C69-F9677E1DE9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84F20C49-5E42-42A2-8C69-F9677E1DE9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84F20C49-5E42-42A2-8C69-F9677E1DE9C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D95566-7FFA-4B33-99D7-06DCDD1ADF26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D95566-7FFA-4B33-99D7-06DCDD1ADF26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D95566-7FFA-4B33-99D7-06DCDD1ADF26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D95566-7FFA-4B33-99D7-06DCDD1ADF26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47FD3C9B-3C71-45DF-9B87-9EC18BEA698A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FD3C9B-3C71-45DF-9B87-9EC18BEA698A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47FD3C9B-3C71-45DF-9B87-9EC18BEA698A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47FD3C9B-3C71-45DF-9B87-9EC18BEA698A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94114787-8173-4297-8571-28C4E9D92CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94114787-8173-4297-8571-28C4E9D92CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94114787-8173-4297-8571-28C4E9D92CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94114787-8173-4297-8571-28C4E9D92CF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E69093-9906-4FCA-9F9F-A3E24DA01CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E69093-9906-4FCA-9F9F-A3E24DA01CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E69093-9906-4FCA-9F9F-A3E24DA01CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E69093-9906-4FCA-9F9F-A3E24DA01CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94FA90A4-CCE4-49DC-8CCF-C6B9C86F8772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94FA90A4-CCE4-49DC-8CCF-C6B9C86F8772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94FA90A4-CCE4-49DC-8CCF-C6B9C86F8772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94FA90A4-CCE4-49DC-8CCF-C6B9C86F8772}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F934611-B108-4DEC-80C8-124BC933B04E}
+	EndGlobalSection
+EndGlobal
