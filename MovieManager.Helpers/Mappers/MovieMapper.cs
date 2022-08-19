@@ -8,7 +8,11 @@ namespace MovieManager.Helpers.Mappers
     {
         public MovieMapper()
         {
-            CreateMap<Movie, MovieDto>();
+            CreateMap<Movie, MovieDto>()
+                .ForMember(dest => dest.Genre, opt => opt.MapFrom(x => x.Genre.ToString())).ReverseMap();
+
+            CreateMap<Movie, AddMovieDto>()
+                .ForMember(dest => dest.Genre, opt => opt.MapFrom(x => x.Genre.ToString())).ReverseMap();
         }
     }
 }

@@ -4,6 +4,8 @@ namespace MovieManager.DataAccess.Repositories.Interfaces
 {
     public interface IRepository<T> where T : BaseEntity
     {
+        public IQueryable<T> Query { get; }
+
         IEnumerable<T> GetAll();
         T GetById(int id);
         int Insert(T entity);

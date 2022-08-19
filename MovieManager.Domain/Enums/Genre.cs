@@ -1,4 +1,6 @@
-﻿namespace MovieManager.Domain.Enums
+﻿using System.ComponentModel;
+
+namespace MovieManager.Domain.Enums
 {
     public enum Genre
     {

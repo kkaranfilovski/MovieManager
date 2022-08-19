@@ -1,4 +1,5 @@
 ﻿using MovieManager.ServiceModels.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieManager.ServiceModels.MovieModels
 {
@@ -8,6 +9,6 @@ namespace MovieManager.ServiceModels.MovieModels
         public string Title { get; set; }
         public string Description { get; set; }
         public int Year { get; set; }
-        public Genre Genre { get; set; }
+        public string Genre { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MovieManager.ServiceModels.MovieModels;
 using MovieManager.Services.Interfaces;
 
@@ -7,7 +6,6 @@ namespace MovieManager.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-
     public class MovieController : ControllerBase
     {
         private readonly IMovieService _movieService;
@@ -17,22 +15,21 @@ namespace MovieManager.Api.Controllers
             _movieService = movieService;
         }
 
-        [HttpGet("/all")]
+        [HttpGet("all")]
         public ActionResult<IEnumerable<MovieDto>> GetAllMovies()
         {
             try
             {
                 var movies = _movieService.GetAllMovies();
-                return Ok(movies);   
+                return Ok(movies);
             }
             catch (Exception ex)
             {
                 return NotFound();
-                throw;
             }
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         public ActionResult<MovieDto> GetMovieById(int id)
         {
             try
@@ -46,5 +43,32 @@ namespace MovieManager.Api.Controllers
             }
         }
 
+        [HttpGet("genre/{genre}")]
+        public ActionResult<MovieDto> GetMoviesByGenre(string genre)
+        {
+            try
+            {
+                var movies = _movieService.GetMovieByGenre(genre);
+                return Ok(movies);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("addMovie")]
+        public ActionResult<AddMovieDto> AddNewMovie([FromBody] AddMovieDto newMovie)
+        {
+            if (ModelState.IsValid)
+            {
+                _movieService.AddMovie(newMovie);
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
     }
 }

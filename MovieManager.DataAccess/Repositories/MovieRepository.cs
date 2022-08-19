@@ -9,6 +9,8 @@ namespace MovieManager.DataAccess.Repositories
         
         private readonly MovieManagerDbContext _context;
 
+        public IQueryable<Movie> Query => throw new NotImplementedException();
+
         public MovieRepository(MovieManagerDbContext context)
         {
             _context = context;
