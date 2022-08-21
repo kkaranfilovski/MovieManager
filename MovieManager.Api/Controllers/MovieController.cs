@@ -74,15 +74,29 @@ namespace MovieManager.Api.Controllers
         [HttpPut("{id}/edit")]
         public ActionResult<EditMovieDto> EditMovie(int id, [FromBody] EditMovieDto editMovie)
         {
-            _movieService.UpdateMovie(id, editMovie);
-            return Ok();
+            try
+            {
+                _movieService.UpdateMovie(id, editMovie);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpDelete("delete/id/{id}")]
         public ActionResult<MovieDto> DeleteMovie(int id)
         {
-            _movieService.DeleteMovie(id);
-            return Ok();
+            try
+            {
+                _movieService.DeleteMovie(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
