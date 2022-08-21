@@ -13,6 +13,9 @@ namespace MovieManager.Helpers.Mappers
 
             CreateMap<Movie, AddMovieDto>()
                 .ForMember(dest => dest.Genre, opt => opt.MapFrom(x => x.Genre.ToString())).ReverseMap();
+
+            CreateMap<Movie, EditMovieDto>()
+                .ForMember(dest => dest.Genre, opt => opt.MapFrom(x => x.Genre.ToString())).ReverseMap();
         }
     }
 }

@@ -57,7 +57,7 @@ namespace MovieManager.Api.Controllers
             }
         }
 
-        [HttpPost("addMovie")]
+        [HttpPost("add")]
         public ActionResult<AddMovieDto> AddNewMovie([FromBody] AddMovieDto newMovie)
         {
             if (ModelState.IsValid)
@@ -69,6 +69,20 @@ namespace MovieManager.Api.Controllers
             {
                 return BadRequest();
             }
+        }
+
+        [HttpPut("{id}/edit")]
+        public ActionResult<EditMovieDto> EditMovie(int id, [FromBody] EditMovieDto editMovie)
+        {
+            _movieService.UpdateMovie(id, editMovie);
+            return Ok();
+        }
+
+        [HttpDelete("delete/id/{id}")]
+        public ActionResult<MovieDto> DeleteMovie(int id)
+        {
+            _movieService.DeleteMovie(id);
+            return Ok();
         }
     }
 }

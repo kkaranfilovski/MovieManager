@@ -57,20 +57,41 @@ namespace MovieManager.Services
             }
         }
 
-        public void AddMovie(AddMovieDto movie)
+        public int AddMovie(AddMovieDto movie)
         {
             var newMovie = _repo.Insert(_mapper.Map<Movie>(movie));
+            return newMovie;
         }
 
-        public void UpdateMovie(MovieDto movie)
+        public int UpdateMovie(int id, EditMovieDto movie)
         {
-            var updatedMovie = _repo.Update(_mapper.Map<Movie>(movie));
+            var movieDb = _repo.GetById(id);
+            if(movieDb == null)
+            {
+                throw new Exception("movie not found");
+            }
+            if (String.IsNullOrWhiteSpace(movie.Title))
+            {
+                throw new Exception("Title cannot be empty");
+            }
+            if(movie.Description?.Length > 250)
+            {
+                throw new Exception("Description cannot be longer then 250 characaters");
+            }
+            if (String.IsNullOrWhiteSpace(movie.Genre))
+            {
+                throw new Exception("Genre cannot be empty");
+            }
+
+            var editedMovie = _mapper.Map<Movie>(movie);
+            var updatedMovie = _repo.Update(editedMovie);
+            return updatedMovie;    
         }
 
-        public void DeleteMovie(int id)
+        public int DeleteMovie(int id)
         {
             var movieToDelete = _repo.Delete(id);
-
+            return movieToDelete;
         }
     }
 }

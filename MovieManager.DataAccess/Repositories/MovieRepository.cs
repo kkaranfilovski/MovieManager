@@ -43,6 +43,7 @@ namespace MovieManager.DataAccess.Repositories
 
         public int Update(Movie entity)
         {
+            _context.ChangeTracker.Clear();
             _context.Movies.Update(entity);
             _context.SaveChanges();
             return _context.Movies.ToList().Count;

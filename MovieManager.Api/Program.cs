@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-string connString = builder.Configuration.GetConnectionString("MovieManagerDbConnectionExpress");
+string connString = builder.Configuration.GetConnectionString("MovieManagerDbConnection");
 builder.Services
     .RegisterAutoMapperDependecy()
     .RegisterDbContextDependecy(connString)

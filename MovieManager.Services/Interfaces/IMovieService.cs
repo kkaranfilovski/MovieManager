@@ -7,8 +7,8 @@ namespace MovieManager.Services.Interfaces
         IEnumerable<MovieDto> GetAllMovies();
         MovieDto GetMovieById(int id);    
         IEnumerable<MovieDto> GetMovieByGenre(string genre);
-        void AddMovie(AddMovieDto movie);
-        void UpdateMovie(MovieDto movie);   
-        void DeleteMovie(int id);
+        int AddMovie(AddMovieDto movie);
+        int UpdateMovie(int id, EditMovieDto movie);   
+        int DeleteMovie(int id);
     }
 }
