@@ -16,7 +16,9 @@ builder.Services
     .RegisterRepositoriesDependency()
     .RegisterServicesDependency();
 
+builder.Services.AddCors(options => options.AddPolicy("myPolicy", policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 var app = builder.Build();
+app.UseCors("myPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

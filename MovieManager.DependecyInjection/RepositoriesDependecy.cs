@@ -11,6 +11,7 @@ namespace MovieManager.DependecyInjection
            (this IServiceCollection services)
         {
             services.AddTransient<IRepository<Movie>, MovieRepository>();
+            services.AddTransient<IEFDapperRepository<Movie>, EFDapperMovieRepository>();
 
             return services;
         }

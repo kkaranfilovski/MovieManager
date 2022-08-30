@@ -10,17 +10,29 @@ namespace MovieManager.Services
 {
     public class MovieService : IMovieService
     {
-        private IRepository<Movie> _repo;
+        private readonly IRepository<Movie> _repo;
         private readonly IMapper _mapper;
+        private readonly IEFDapperRepository<Movie> _mixedRepo;
 
-        public MovieService(IRepository<Movie> repo, IMapper mapper)
+        public MovieService(IRepository<Movie> repo, IMapper mapper, IEFDapperRepository<Movie> mixedRepo)
         {
             _repo = repo;
             _mapper = mapper;
+            _mixedRepo = mixedRepo;
         }
         public IEnumerable<MovieDto> GetAllMovies()
         {
-            var movies = _repo.GetAll().Select(_mapper.Map<Movie, MovieDto>);
+            //var movies = _repo.GetAll().Select(_mapper.Map<Movie, MovieDto>);
+            //if (movies.Any())
+            //{
+            //    return movies;
+            //}
+            //else
+            //{
+            //    throw new Exception("No movies");
+            //}
+
+            var movies = _mixedRepo.GetAll().Select(_mapper.Map<Movie, MovieDto>);
             if (movies.Any())
             {
                 return movies;
@@ -33,14 +45,23 @@ namespace MovieManager.Services
 
         public MovieDto GetMovieById(int id)
         {
-            var movie = _repo.GetById(id);
+            //var movie = _repo.GetById(id);
 
-            if(movie == null)
+            //if(movie == null)
+            //{
+            //    throw new Exception("movie not found");
+            //}
+
+            //return _mapper.Map<Movie,MovieDto>(movie);
+
+            var movie = _mixedRepo.GetById(id);
+
+            if (movie == null)
             {
                 throw new Exception("movie not found");
             }
 
-            return _mapper.Map<Movie,MovieDto>(movie);
+            return _mapper.Map<Movie, MovieDto>(movie);
         }
 
         public IEnumerable<MovieDto> GetMovieByGenre(string genre)
